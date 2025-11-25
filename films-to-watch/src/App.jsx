@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 import FilmCard from "./components/FilmCard";
+import AddFilm from "./components/AddFilm";
 
 function App() {
     const initialFilms = [
@@ -41,6 +42,7 @@ function App() {
     return (
         <div className="app">
             <FilmCard films={films} setFilms={setFilms} />
+            <AddFilm setFilms={setFilms} />
         </div>
     );
 }
