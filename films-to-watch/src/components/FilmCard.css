@@ -1,0 +1,149 @@
+/* FilmCard.css */
+
+.films {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: "Arial", sans-serif;
+}
+
+.films h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.film-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.film-card li {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #e0e0e0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.film-card li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Стили для статуса "хочу посмотреть" */
+.film-card--want-to-watch {
+    border-left-color: #ff6b6b;
+    background: linear-gradient(135deg, #fff 0%, #fff5f5 100%);
+}
+
+.film-card--want-to-watch:hover {
+    border-left-color: #ff5252;
+}
+
+/* Стили для статуса "посмотрено" */
+.film-card--watched {
+    border-left-color: #51cf66;
+    background: linear-gradient(135deg, #fff 0%, #f8fff9 100%);
+}
+
+.film-card--watched:hover {
+    border-left-color: #40c057;
+}
+
+.film-card__title h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.film-card__status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Стили для badge статуса "хочу посмотреть" */
+.status-want-to-watch {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+/* Стили для badge статуса "посмотрено" */
+.status-watched {
+    background-color: #51cf66;
+    color: white;
+}
+
+/* Анимация при изменении статуса */
+.film-card li {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .films {
+        padding: 15px;
+    }
+
+    .film-card li {
+        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .film-card__title h1 {
+        font-size: 16px;
+    }
+
+    .films h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .films {
+        padding: 10px;
+    }
+
+    .film-card li {
+        padding: 12px;
+    }
+
+    .film-card__status {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+}
+
+/* Дополнительные эффекты для улучшения UX */
+.film-card li:active {
+    transform: scale(0.98);
+}
+
+.film-card__title {
+    flex: 1;
+}
+
+/* Плавная анимация при hover на статус */
+.film-card__status {
+    transition: all 0.2s ease;
+}
+
+.film-card li:hover .film-card__status {
+    transform: scale(1.05);
+}
